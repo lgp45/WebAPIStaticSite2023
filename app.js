@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();    //sets to an object instance    //object instantiation in JS
+var port = process.env.port || 3000;
 
 //setup a route for static files
 app.use(express.static(__dirname+"/static"));
@@ -15,6 +16,6 @@ app.get("/home", function(req, res){
     res.send("This will be our homepage for now.");
 });
 
-app.listen(3000, function(){
+app.listen(port, function(){
     console.log("Server is running... Please remember to shut down the server... Shutdown with: Control+C");
 });   //listens on port 3000
