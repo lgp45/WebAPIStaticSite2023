@@ -11,11 +11,35 @@ app.get("/", function(req, res){
     res.sendFile(__dirname+"/static/index.html");
 });
 
+
 //Route for a home section
 app.get("/home", function(req, res){
     res.send("This will be our homepage for now.");
+});
+//Route for a home section
+app.get("/info", function(req, res){
+    res.send("Info page...");
+});
+
+//Route for a home section
+app.get("/login", function(req, res){
+    res.send("Login Page");
+});
+
+
+//testing for unity 
+let enemy = {
+	"name": "orc",
+	"health": 100,
+	"attack": 25
+}
+
+app.get('/enemy/orc', (req, res) => {
+    res.send(enemy);
 });
 
 app.listen(port, function(){
     console.log("Server is running... Please remember to shut down the server... Shutdown with: Control+C");
 });   //listens on port 3000
+
+
